@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ana</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['"Inter"', 'sans-serif'],
+              display: ['"Space Grotesk"', 'sans-serif'],
+            },
+            animation: {
+              'fade-in': 'fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+              'float-slow': 'float 20s ease-in-out infinite',
+              'float-medium': 'float 15s ease-in-out infinite reverse',
+            },
+            keyframes: {
+              fadeIn: {
+                '0%': { opacity: '0', transform: 'translateY(10px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+              float: {
+                '0%, 100%': { transform: 'translate(0, 0)' },
+                '50%': { transform: 'translate(-20px, 20px)' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        font-family: 'Inter', sans-serif;
+        /* Global gradient background similar to the reference image base */
+        background: linear-gradient(135deg, #a8c0ff 0%, #3f2b96 100%); 
+        background-color: #333; /* Fallback */
+        height: 100vh;
+        width: 100vw;
+        overflow: hidden;
+        color: white;
+      }
+
+      /* Noise Texture - Vital for the aesthetic */
+      .noise-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 0;
+        opacity: 0.15; /* Increased opacity for visible grain */
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+      }
+      
+      /* Vibrant Orbs */
+      .orb {
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(80px);
+        opacity: 0.8;
+        z-index: 0;
+      }
+
+      /* Red/Orange Orb (Top Left) */
+      .orb-red {
+        background: radial-gradient(circle, #ff4e50, #f9d423);
+      }
+
+      /* Green/Muted Orb (Right) */
+      .orb-green {
+        background: radial-gradient(circle, #43cea2, #185a9d);
+        opacity: 0.6;
+      }
+
+      /* Pink/Purple Orb (Bottom) */
+      .orb-purple {
+        background: radial-gradient(circle, #DA22FF, #9733EE);
+        opacity: 0.5;
+      }
+
+      /* Text Outline Effect ("hello" style) */
+      .text-outline {
+        color: transparent;
+        -webkit-text-stroke: 1px rgba(255, 255, 255, 0.9);
+      }
+      
+      /* Custom scrollbar to match glass theme */
+      ::-webkit-scrollbar { width: 4px; }
+      ::-webkit-scrollbar-track { background: transparent; }
+      ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.3); border-radius: 10px; }
+      ::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.5); }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.31.0",
+    "react": "https://aistudiocdn.com/react@^19.2.1",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.1/",
+    "react/": "https://aistudiocdn.com/react@^19.2.1/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div class="noise-overlay"></div>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
