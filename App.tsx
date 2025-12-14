@@ -82,7 +82,7 @@ const App: React.FC = () => {
   if (appState === AppState.ERROR) {
     return (
       <div className="h-screen w-screen flex items-center justify-center text-white/80 font-display">
-        SYSTEM FAILURE.
+        ERREUR SYSTÈME.
       </div>
     );
   }
@@ -121,10 +121,10 @@ const App: React.FC = () => {
           {messages.length === 0 && (
             <div className="h-full flex flex-col items-center justify-center text-center p-6 opacity-60">
               <p className="text-white font-display text-lg uppercase tracking-widest mb-2">
-                Digital Connection
+                CONNEXION NUMÉRIQUE
               </p>
               <p className="text-white/60 text-sm font-light">
-                Start the conversation
+                Commencez la discussion
               </p>
             </div>
           )}
@@ -145,7 +145,7 @@ const App: React.FC = () => {
                   value={inputText}
                   onChange={(e) => setInputText(e.target.value)}
                   disabled={isProcessing}
-                  placeholder="Type a message..."
+                  placeholder="Écrivez un message..."
                   className="w-full bg-white/5 border border-white/20 rounded-2xl px-6 py-4 text-white placeholder-white/40 focus:outline-none focus:bg-white/10 focus:border-white/40 transition-all font-sans font-light shadow-inner"
                   autoFocus
                 />
@@ -158,7 +158,7 @@ const App: React.FC = () => {
                 isLoading={isProcessing}
                 className="w-full h-12 text-sm"
               >
-                Send Message
+                ENVOYER
               </Button>
           </form>
         </div>

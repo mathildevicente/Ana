@@ -42,7 +42,7 @@ export const Onboarding: React.FC<OnboardingProps> = ({ onComplete }) => {
           <div className="space-y-6">
             <div className="group">
               <label htmlFor="name" className="block text-xs font-bold text-white/60 uppercase tracking-widest mb-2 pl-4">
-                Name
+                Nom
               </label>
               <input
                 type="text"
@@ -51,14 +51,14 @@ export const Onboarding: React.FC<OnboardingProps> = ({ onComplete }) => {
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 className="block w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-white/20 focus:outline-none focus:bg-white/10 focus:border-white/30 transition-all text-center"
-                placeholder="Enter your name"
+                placeholder="Entrez votre nom"
                 autoComplete="off"
               />
             </div>
 
             <div className="group">
               <label htmlFor="pronouns" className="block text-xs font-bold text-white/60 uppercase tracking-widest mb-2 pl-4">
-                Pronouns
+                Pronoms
               </label>
               <input
                 type="text"
@@ -67,7 +67,7 @@ export const Onboarding: React.FC<OnboardingProps> = ({ onComplete }) => {
                 value={pronouns}
                 onChange={(e) => setPronouns(e.target.value)}
                 className="block w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-white/20 focus:outline-none focus:bg-white/10 focus:border-white/30 transition-all text-center"
-                placeholder="He/She/They"
+                placeholder="Il/Elle/Iel"
                 autoComplete="off"
               />
             </div>
@@ -75,7 +75,7 @@ export const Onboarding: React.FC<OnboardingProps> = ({ onComplete }) => {
 
           <div className="pt-4">
             <Button type="submit" className="w-full h-14 text-sm tracking-widest">
-              GLASS MORPHISM
+              ENTRER
             </Button>
           </div>
         </form>
